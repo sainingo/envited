@@ -6,7 +6,7 @@ import EventPage from './components/EventPage'
 
 function App() {
   return (
-    <div className="bg-[F6F2FF]">
+    <div className="bg-[#ede5ff] h-100%">
     <Routes >
        <Route path="/" element={ <Home />}/>
        <Route path="/create" element={<CreateEvent />} />

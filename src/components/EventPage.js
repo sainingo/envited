@@ -6,7 +6,7 @@ import cake from '../assets/cake.png'
 
 const EventPage = () => {
   return (
-    <div>
+    <div className='h-screen'>
       <div>
         <img src={cake} alt="Cake holder" />
       </div>
