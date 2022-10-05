@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import cake from '../assets/cake.png'
  import {FaRegCalendarAlt} from 'react-icons/fa'
  import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
  import { GoLocation } from 'react-icons/go'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const EventPage = () => {
   const localData = JSON.parse(localStorage.getItem('eventData'))
+
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    
+  if(localData == null) {
+    navigate('/create')
+  }
+  }, [localData, navigate])
   
   return (
     <div className='h-[100%] md:h-screen lg:flex lg:h-screen lg:p-8'>
@@ -16,14 +26,14 @@ const EventPage = () => {
       <div className='md:w-[60%] md:mx-auto md:p-8 lg:absolute lg:w-[50%] lg:ml-2 mt-4'>
         
       <div className='m-4 text-xl'>
-        <h3 className='font-bold text-2xl'>{localData.host}</h3>
-        <p className='text-lg'>Hosted by Elysia</p>
+        <h3 className='font-bold text-2xl'>{localData && localData.event}</h3>
+        <p className='text-lg'>Hosted by {localData && localData.host}</p>
       </div>
 
       <div className='flex items-center gap-10 p-4 text-xl justify-around'>
         <i className='text-4xl'>< FaRegCalendarAlt /></i>
-        <p className='text-[18px]'>{localData.startDate} <br></br>
-          <span>to {localData.endDate} UTC+10</span>
+        <p className='text-[18px]'>{localData && localData.startDate} <br></br>
+          <span>to {localData && localData.endDate} UTC+10</span>
         </p>
         <i className='text-4xl'>< MdOutlineKeyboardArrowRight /></i>
       </div>
@@ -31,7 +41,7 @@ const EventPage = () => {
       <div className='flex items-center gap-10 p-4 text-xl justify-around'>
         <i className='text-4xl'>< GoLocation /></i>
         <p className='text-[18px]'>Street name <br />
-          <span>Suburb, {localData.location}, Postcode</span>
+          <span>Suburb, {localData && localData.location}, Postcode</span>
         </p>
         <i className='text-4xl'>< MdOutlineKeyboardArrowRight /></i>
       </div>
