@@ -50,7 +50,7 @@ const CreateEvent = () => {
     <div className='text-white text-4xl text-center p-4'>
       <h1>Create an Event</h1>
     </div>
-    <div className='w-[80%] mx-auto text-black'>
+    <div className='w-[80%] mx-auto text-black lg:w-[50%]'>
     <form onSubmit={handleSubmit} className='p-8'>
       <div className='m-2'>
         <label className='text-white'>Event Name</label>
@@ -83,7 +83,7 @@ const CreateEvent = () => {
       </div>
       
       <div>
-        <button className='bg-[#e87bf8] px-4 py-2 w-[60%] font-bold text-lg m-2' type='submit'>Next</button>
+        <button className='bg-[#e87bf8] px-4 py-2 w-[60%] font-bold text-lg m-2 lg:w-[40%]' type='submit'>Next</button>
       </div>
 
      </form>

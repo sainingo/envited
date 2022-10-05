@@ -3,12 +3,13 @@ import cake from '../assets/cake.png'
  import {FaRegCalendarAlt} from 'react-icons/fa'
  import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
  import { GoLocation } from 'react-icons/go'
+import { Link } from 'react-router-dom'
 
 const EventPage = () => {
   const localData = JSON.parse(localStorage.getItem('eventData'))
   
   return (
-    <div className='h-screen md:h-screen lg:flex lg:h-screen lg:p-8 '>
+    <div className='h-[100%] md:h-screen lg:flex lg:h-screen lg:p-8'>
       <div className='md:w-[90%] md:mx-auto md:p-8'>
         <img src={cake} alt="Cake holder" className='md:w-[60%] md:mx-auto lg:absolute lg:right-32 lg:w-[30%]'/>
       </div>
@@ -34,6 +35,7 @@ const EventPage = () => {
         </p>
         <i className='text-4xl'>< MdOutlineKeyboardArrowRight /></i>
       </div>
+      <Link to='/'><button className='bg-fuchsia-500 m-4 py-2 px-4 rounded text-white cursor-pointer'>Back to home</button></Link>
       </div>
     </div>
   )
