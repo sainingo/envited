@@ -9,6 +9,8 @@
 - TailwindCSS
 - localstorage
 
+[live link](https://envited-social-app.netlify.app/)
+
 ## Get Started
 
 To get a clone of the project, run `git clone git@github.com:sainingo/envited.git`
